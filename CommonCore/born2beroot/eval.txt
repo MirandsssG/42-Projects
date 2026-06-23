@@ -1,0 +1,115 @@
+How a virtual machine works:
+-Uma maquina virtual e uma emulacao baseada em software de um computador fisico que corre um sistema e aplicacoes como um computador real
+
+Choice of operating system:
+-Eu escolhi o Debian como sistema operativo
+
+Difference between Rocky and Debian:
+-O Debian e mais simples e direcionado para uso pessoal, enquanto o Rocky e mais utilizado por grandes empresas, o Debian e mais conhecido pela sua 
+estabilidade e flexibilidade
+
+The purpose of a virtual machine:
+-As maquinas virtuais sao utilizadas pela sua seguranca, para testar aplicacoes em sistemas operativos devido a sua isolacao
+
+What is aptitude, apt and APPArmor:
+-Tanto aptitude como o apt sao gerenciadores de pacotes utilizados em Linux, utilizados para instalar programas novos na maquina, o apt e text based 
+enquanto o aptitude usa uma interface grafica
+-aa-status
+
+What is UFW:
+-Uncomplicated Firewall e utilizado para gerenciar iptables, fazendo com que gerir regras de firewall em portas de rede mais facil e com comandos simples
+
+What is SSH:
+-Secure Shell e um protocolo usado para aceder remotamente e seguramente a dispositivos e gerencia los, pode ser utilizado para aceder a outro computador e
+executar comandos e transferir ficheiros seguramente sendo que e encriptado
+
+Check OS:
+-uname -a
+
+Check user and groups and pw policy:
+-groups (user) , getent group (group name), vim /etc/login.defs , vim /etc/pam.d/common-password
+
+Create a user and explain pw policy:
+-sudo adduser (user), sudo deluser (user)
+
+Create a group named evaluating and assign to user:
+-sudo addgroup (name) , sudo adduser (user) (group), sudo delgroup (user) (group)
+
+Explain why pw policy:
+-As regras de password sao essenciais para prevenir cyber ataques, mudancas frequentes para reduzir as chances de haver uma password comprometida durante
+muito tempo e para educar os utilizadores das empresas
+
+Check hostname:
+-hostname
+
+Modify hostname to students one and restart:
+-sudo hostnamectl set-hostname (hostname)
+
+Restore hostname:
+-sudo hostnamectl set-hostname (hostname)
+
+View partitions:
+-lsblk
+
+Compare partitions with example:
+-lsblk
+
+How LVM works and explain it:
+-Logical Volume Manager e uma ferramenta para gerenciar dispositivos de armazenamento e consegue se criar VG (volume groups) e LG (logical volumes) e
+deixa criar e fazer resize as particoes sem ter que reiniciar o sistema
+
+Check is sudo is installed:
+-sudo service sudo status
+
+Add new user to sudo:
+-sudo adduser (user) (sudo)
+
+Explain sudo and operations, show the rules for sudo:
+-sudo deixa que os utilizadores autorizados consigam executar comandos com o super user (root), mas com os beneficios de seguranca e de auditoria,
+vim /etc/sudoers.d/sudo_config
+
+verify /var/log/sudo and check history:
+vim /var/log/sudo/sudo_config
+
+Check that UFW is installed:
+-ufw --version
+
+Explain UFW and uses:
+-Uncomplicated Firewall e utilizado para gerenciar iptables, fazendo com que gerir regras de firewall em portas de rede mais facil e com comandos simples
+sudo ufw allow 8080 | sudo ufw deny 8080
+
+List rules of UFW:
+-sudo ufw status
+
+Add a new rule to port 8080:
+-sudo ufw allow 8080
+
+Delete this rule:
+-sudo ufw deny 8080
+
+Check that SSH is installed:
+-sudo service ssh status
+-vim /etc/ssh/sshd_config
+
+Explain SSH and value of using it:
+-Secure Shell e um protocolo usado para aceder seguramente a dispositivos e gerencia los, pode ser utilizado para aceder a outro computador e executar 
+comandos e transferir ficheiros seguramente sendo que e encriptado
+
+Check that SSH only uses port 4242:
+-ssh dluis-ma@ip -p 4242
+
+Use SSH to log into new user:
+-ssh newuser@ip -p 4242
+
+Explain how the script works:
+-explain
+
+What Cron is:
+-Cron e um programa time based que deixa os utilizadores programarem scripts ou programas para serem executados por exemplo de hora a hora todos os dias
+
+Run the script every minute:
+-sudo crontab -u root -e and change minutes from 10 to 1
+
+Stop the script without changing it:
+-sudo systemctl stop cron or disable cron
+-sudo systemctl start cron or enable cron
