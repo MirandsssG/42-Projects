@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 18:09:59 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/05/21 17:32:31 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:48:26 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ Fixed Fixed::operator-(const Fixed &other) const {
 
 Fixed Fixed::operator*(const Fixed &other) const {
 	Fixed result;
-	result.setRawBits((fp_value * other.fp_value) >> fractional_bits);
+	result.setRawBits((static_cast<long long>(fp_value) * other.fp_value) >> fractional_bits);
 	return result;
 }
 
