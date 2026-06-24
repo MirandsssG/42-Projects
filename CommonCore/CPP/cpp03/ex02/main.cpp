@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 18:09:37 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/05/25 17:34:10 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/06/24 11:46:09 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ int main( void ) {
 	th.takeDamage(10);
 	th.beRepaired(5);
 	th.guardGate();
+	th.guardGate();
+
+	std::cout << std::endl;
+	
+	ScavTrap sd("Scooby Doo");
+	
+	sd.takeDamage(100);
+	sd.guardGate();
 
 	std::cout << std::endl;
 

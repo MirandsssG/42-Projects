@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 18:09:37 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/05/25 17:34:16 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/06/24 11:45:41 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ int main( void ) {
 	
 	th.attack("Jackie Chan");
 	th.guardGate();
+	th.guardGate();
+
+	std::cout << std::endl;
+	
+	ScavTrap sd("Scooby Doo");
+	
+	sd.takeDamage(100);
+	sd.guardGate();
 
 	std::cout << std::endl;
 

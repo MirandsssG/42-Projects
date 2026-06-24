@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 17:18:50 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/05/25 17:19:17 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/06/24 11:43:04 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
-
+	private:
+		bool guardMode;
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);

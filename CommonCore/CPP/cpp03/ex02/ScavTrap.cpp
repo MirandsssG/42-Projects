@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 17:18:19 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/05/25 17:21:51 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/06/24 11:42:33 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,16 @@ void ScavTrap::attack(const std::string &target) {
 }
 
 void ScavTrap::guardGate() {
+	if (this->hitPoints <= 0)
+	{
+		std::cout << "ScavTrap " << this->name << " is dead and cannot enter Gate keeper mode." << std::endl;
+		return;
+	}
+	if (this->guardMode)
+	{
+		std::cout << "ScavTrap " << this->name << " is already in Gate keeper mode." << std::endl;
+		return;
+	}
+	this->guardMode = true;
 	std::cout << "ScavTrap " << this->name << " is now in Gate keeper mode." << std::endl;
 }
