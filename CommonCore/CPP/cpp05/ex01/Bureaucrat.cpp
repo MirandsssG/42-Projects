@@ -6,11 +6,12 @@
 /*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 06:01:32 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/01 22:08:10 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/01 22:11:58 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade) {
 	if (grade < 1)
@@ -54,11 +55,11 @@ void	Bureaucrat::decrementGrade() {
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-	return ("Bureaucrat grade is too high");
+	return ("Bureaucrat Grade is too high");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("Bureaucrat grade is too low");
+	return ("Bureaucrat Grade is too low");
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat){
