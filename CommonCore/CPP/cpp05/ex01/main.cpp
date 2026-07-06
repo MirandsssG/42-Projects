@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 06:01:28 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/01 07:14:49 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/06 12:43:24 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #define RESET "\033[0m"
 #define GREEN "\033[32m"
 #define RED "\033[31m"
@@ -93,6 +94,92 @@ int	main ()
 		std::cout << std::endl;
 	}
 	catch (std::exception& e){
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+	
+	std::cout << BLUE << "\n\n--- Test 7: Valid Form ---" << RESET << std::endl;
+	try {
+		Form test1 ("Test 1", 50, 50);
+		std::cout << GREEN << test1 << RESET << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+	
+	std::cout << BLUE << "--- Test 8: Invalid Form (grade to sign too high) ---" << RESET << std::endl;
+	try {
+		Form test2 ("Test 2", 0, 50);
+		std::cout << GREEN << test2 << RESET << std::endl;
+		std::cout << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+	std::cout << std::endl;
+
+	std::cout << BLUE << "--- Test 9: Invalid Form (grade to sign too low) ---" << RESET << std::endl;
+	try {
+		Form test3 ("Test 3", 200, 50);
+		std::cout << GREEN << test3 << RESET << std::endl;
+		std::cout << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+	std::cout << std::endl;
+	
+	std::cout << BLUE << "--- Test 10: Invalid Form (grade to execute too high) ---" << RESET << std::endl;
+	try {
+		Form test4 ("Test 4", 50, 0);
+		std::cout << GREEN << test4 << RESET << std::endl;
+		std::cout << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+	std::cout << std::endl;
+
+	std::cout << BLUE << "--- Test 11: Invalid Form (grade to execute too low) ---" << RESET << std::endl;
+	try {
+		Form test5 ("Test 5", 50, 200);
+		std::cout << GREEN << test5 << RESET << std::endl;
+		std::cout << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+	std::cout << std::endl;
+
+	std::cout << BLUE << "--- Test 12: Form is Signed starts at false ---" << RESET << std::endl;
+	try {
+		Form test6 ("Test 6", 50, 50);
+		std::cout << GREEN << test6 << RESET << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+	
+	std::cout << BLUE << "--- Test 13: Copy constructor Form ---" << RESET << std::endl;
+	try {
+		Form test7 ("Test 7", 50, 50);
+		std::cout << GREEN << test7 << RESET << std::endl;
+		Form test8 (test7);
+		std::cout << GREEN << test8 << RESET << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+
+	std::cout << BLUE << "--- Test 14: Copy assignment operator Form (only isSigned should change) ---" << RESET << std::endl;
+	try {
+		Form test9 ("Test 9", 50, 50);
+		std::cout << GREEN << test9 << RESET << std::endl;
+		Form test10 ("Test 10", 100, 100);
+		std::cout << GREEN << test10 << RESET << std::endl;
+		test10 = test9;
+		std::cout << GREEN << test10 << RESET << std::endl;
+	}
+	catch (std::exception& e) {
 		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
 	}
 	

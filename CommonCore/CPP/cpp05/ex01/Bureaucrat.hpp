@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 06:01:30 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/01 22:11:42 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/06 12:09:14 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ class Bureaucrat
 		
 		void	incrementGrade();
 		void	decrementGrade();
+
+		void	signForm(Form &form);
 		
 		class GradeTooHighException : public std::exception {
 			public:
