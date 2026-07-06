@@ -6,7 +6,7 @@
 /*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:29:52 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/06 14:47:10 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/06 16:21:19 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,21 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other) {
-	
+	if (this != other)
+		AForm::operator=(other);
+	return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 	
+}
+
+void ShrubberyCreationForm::draw_tree() const {
+	std::ofstream file((target + "_shrubbery").c_str());
+	if (!file.is_open())
+	{
+		std::cerr << "Error: Couldn't create " << target << "_shrubbery" << std::endl;
+		return;
+	}
+	// tree
 }

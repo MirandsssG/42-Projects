@@ -6,7 +6,7 @@
 /*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:30:31 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/06 14:40:28 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/06 15:36:33 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 class PresidentialPardonForm : class AForm
 {
 	private:
+		const std::string target;
 		PresidentialPardonForm();
 	public:
 		PresidentialPardonForm(const std::string& target);

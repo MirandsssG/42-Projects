@@ -6,7 +6,7 @@
 /*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:30:18 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/06 14:40:33 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/06 15:36:30 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 class RobotomyRequestForm : class AForm
 {
 	private:
+		const std::string target;
 		RobotomyRequestForm();
 	public:
 		RobotomyRequestForm(const std::string& target);
