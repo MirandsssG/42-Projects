@@ -6,7 +6,7 @@
 /*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 06:01:28 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/06 12:43:24 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/06 13:09:23 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,6 +178,57 @@ int	main ()
 		std::cout << GREEN << test10 << RESET << std::endl;
 		test10 = test9;
 		std::cout << GREEN << test10 << RESET << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+
+	std::cout << BLUE << "--- Test 15: Valid form signing / signing twice ---" << RESET << std::endl;
+	try {
+		Form test11 ("Test 11", 40, 50);
+		std::cout << GREEN << test11 << RESET << std::endl;
+		Bureaucrat test11b ("Bureaucrat Test 11", 40);
+		std::cout << GREEN << test11b << RESET << std::endl;
+		test11b.signForm(test11);
+		std::cout << std::endl;
+		std::cout << GREEN << test11 << RESET << std::endl;
+		test11b.signForm(test11);
+		std::cout << std::endl;
+		std::cout << GREEN << test11 << RESET << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+
+	std::cout << BLUE << "--- Test 16: Invalid Form Signing ---" << RESET << std::endl;
+	try {
+		Form test12 ("Test 12", 40, 50);
+		std::cout << GREEN << test12 << RESET << std::endl;
+		Bureaucrat test12b ("Bureaucrat Test 12", 50);
+		std::cout << GREEN << test12b << RESET << std::endl;
+		test12b.signForm(test12);
+		std::cout << std::endl;
+		std::cout << GREEN << test12 << RESET << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
+	}
+
+	std::cout << BLUE << "--- Test 17: Form Signing and copy assignment after ---" << RESET << std::endl;
+	try {
+		Form test13 ("Test 13", 50, 50);
+		std::cout << GREEN << test13 << RESET << std::endl;
+		Bureaucrat test13b ("Bureaucrat Test 13", 50);
+		std::cout << GREEN << test13b << RESET << std::endl;
+		test13b.signForm(test13);
+		std::cout << std::endl;
+		std::cout << GREEN << test13 << RESET << std::endl;
+		Form test14 ("Test 14", 15, 15);
+		std::cout << GREEN << test14 << RESET << std::endl;
+		test14 = test13;
+		std::cout << BLUE << "Copy Assignment operator -> 'Test 14 = Test 13'" << RESET << std::endl;
+		std::cout << std::endl;
+		std::cout << GREEN << test14 << RESET << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << RED << "Exception caught: " << e.what() << RESET << std::endl;
