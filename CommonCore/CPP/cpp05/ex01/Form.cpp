@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dluis-ma <dluis-ma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 22:04:31 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/06 12:26:57 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/07/08 12:52:14 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ const char *Form::GradeTooLowException::what() const throw() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& form){
-	os << form.getName() << ", form is signed = " << form.getIsSigned() << ", form grade to sign = " << form.getGradeToSign() << ", form grade to execute = " << form.getGradeToExecute() << std::endl;
+	os << "Form: " << form.getName() << ", form is signed = " << form.getIsSigned() << ", form grade to sign = " << form.getGradeToSign() << ", form grade to execute = " << form.getGradeToExecute() << std::endl;
 	return (os);
 }
