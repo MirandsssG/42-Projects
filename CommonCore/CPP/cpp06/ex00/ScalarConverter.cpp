@@ -6,7 +6,7 @@
 /*   By: dluis-ma <dluis-ma@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 12:01:20 by dluis-ma          #+#    #+#             */
-/*   Updated: 2026/07/09 13:07:18 by dluis-ma         ###   ########.fr       */
+/*   Updated: 2026/09/14 13:07:07 by dluis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ enum StrType {
 
 static StrType getType(const std::string& str) 
 {
-	if (str.size() == 3 && str[0] == '\'' && str[2] == '\'')
+	if (str.size() == 1 && !std::isdigit(str[0]))
 		return CHAR;
-	if (str == "nan" || str == "+inf" || str == "-inf" || str == "nanf" || str == "+inff" || str == "-inff")
+	if (str == "nan" || str == "+inf" || str == "-inf")
 		return DOUBLE;
 	if (str == "nanf" || str == "+inff" || str == "-inff")
 		return FLOAT;
 	
 	bool hasDecimal = false;
 	bool hasF = false;
+	bool hasDigit = false;
 	size_t i = 0;
 	
 	if (str.empty())
@@ -50,9 +51,13 @@ static StrType getType(const std::string& str)
 		}
 		else if (str[i] == 'f' && i == str.size() - 1)
 			hasF = true;
-		else if (!std::isdigit(str[i]))
-			return INVALID;
+		else if (std::isdigit(str[i]))
+			hasDigit = true;
+		else
+			return INVALID;		
 	}
+	if (!hasDigit)
+		return INVALID;
 	if (hasF)
 		return FLOAT;
 	if (hasDecimal)
@@ -93,7 +98,7 @@ static void printFloat(double num)
 	{
 		float f = static_cast<float>(num);
 		std::cout << f;
-		if (f - static_cast<int>(f) == 0)
+		if (std::fmod(f, 1.0f) == 0.0f)
 			std::cout << ".0";
 		std::cout << "f" << std::endl;
 	}
@@ -109,7 +114,7 @@ static void printDouble(double num)
 	else
 	{
 		std::cout << num;
-		if (num == static_cast<int>(num))
+		if (std::fmod(num, 1.0) == 0.0)
 			std::cout << ".0";
 		std::cout << std::endl;
 	}
@@ -124,7 +129,7 @@ void ScalarConverter::convert(const std::string& literal)
 	{
 		case CHAR:
 		{
-			value = static_cast<double>(literal[1]);
+			value = static_cast<double>(literal[0]);
 			break;
 		}
 		case INT:
@@ -145,13 +150,30 @@ void ScalarConverter::convert(const std::string& literal)
 		case FLOAT:
 		{
 			char *end;
-			value = static_cast<double>(std::strtof(literal.c_str(), &end));
+			float f = std::strtof(literal.c_str(), &end);
+			if (*end != '\0')
+			{
+				std::cout << "char: impossible" << std::endl;
+				std::cout << "int: impossible" << std::endl;
+				std::cout << "float: impossible" << std::endl;
+				std::cout << "double: impossible" << std::endl;
+				return;
+			}
+			value = static_cast<double>(f);
 			break;
 		}
 		case DOUBLE:
 		{
 			char *end;
 			value = std::strtod(literal.c_str(), &end);
+			if (*end != '\0')
+			{
+				std::cout << "char: impossible" << std::endl;
+				std::cout << "int: impossible" << std::endl;
+				std::cout << "float: impossible" << std::endl;
+				std::cout << "double: impossible" << std::endl;
+				return;
+			}
 			break;
 		}
 		case INVALID:
