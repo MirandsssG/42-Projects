@@ -1,0 +1,43 @@
+1 UFW:
+	- sudo service ufw status
+	-UFW (Uncomplicated firewall) is command line interface for managing a
+	firewall on Linux systems, can be used to create firewall port rules
+	-sudo ufw status
+	-sudo ufw allow 8080
+2 Hostname and Partitions:
+	-hostname
+	-sudo hostnamectl set-hostname (hostname)
+	-lsblk
+	-LVM (Logical Volume Manager) provides a layer between physical and
+	logical volumes.
+		-can be resized without disrupting the system or needing a
+		reboot
+		-ease of managment
+		-improved scalability, physical devices can be combined into
+		one VG
+3 General:
+	-sha1sum the signature.txt from the git repo and compare to the machines 	sha1sum
+4 SUDO:
+	-sudo adduser teste
+	-sudo adduser teste sudo
+	-getent group sudo
+	-Sudo allows authorized users to execute commands with superuser(root)
+	while remaining proper security controls and auditing
+	-cd ~ | cd /var/log/sudo
+5 User:
+	-sudo adduser teste
+	-sudo addgroup testeg
+	-sudo adduser teste testeg
+	-sudo adduser teste sudo
+	-sudo addgroup evaluating
+	-vim /etc/login.defs
+	-vim /etc/pam.d/common-password
+		minlen - minimun lenght
+		ucredit - at least 1 uppercase
+		dcredit - at least 1 digit
+		lcredit - at least 1 lowercase
+		maxrepeat - cant have 3 consecutive repeats
+		rejectusername - cant contain the username
+		difok - has to contain at least 7 different characters from last
+		enforce for root - implements to root aswell
+

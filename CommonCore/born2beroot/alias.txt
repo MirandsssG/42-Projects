@@ -1,0 +1,57 @@
+vim ~/.bashrc
+source ~/.bashrc
+
+alias showcommands='echo "add user: sudo adduser <user>
+"
+echo "add group: sudo addgroup <user> | sudo adduser <user> <group>
+"
+echo "check group: getent group <group>
+"
+echo "check ssh status: sudo service ssh status
+"
+echo "ssh config: vim /etc/ssh/sshd_config and /etc/ssh/ssh_config
+"
+echo "add ufw rules: sudo allow <port>alias showcommands='echo "add user: sudo adduser <user>
+"
+echo "add group: sudo addgroup <user> | sudo adduser <user> <group>
+"
+echo "check group: getent group <group>
+"
+echo "check ssh status: sudo service ssh status
+"
+echo "ssh config: vim /etc/ssh/sshd_config and /etc/ssh/ssh_config
+"
+echo "add ufw rules: sudo allow <port>
+"
+echo "check ufw status: sudo ufw status | status verbose | status numbered
+"
+echo "sudo policies: vim /etc/sudoers.d/sudo_config
+"
+echo "password policy: vim /etc/login.defs
+"
+echo "password policy2: vim /etc/pam.d/common-password
+"
+echo "check password expire date: sudo chage -l <username>
+"
+echo "force password rules: sudo chage -m <time> <user> | -M <time> <user>
+"
+echo "crontab: sudo crontab -u root -e
+"
+echo "alias: vim ~/.bashrc | source ~/.bashrc"'
+
+"
+echo "check ufw status: sudo ufw status | status verbose | status numbered
+"
+echo "sudo policies: vim /etc/sudoers.d/sudo_config
+"
+echo "password policy: vim /etc/login.defs
+"
+echo "password policy2: vim /etc/pam.d/common-password
+"
+echo "check password expire date: sudo chage -l <username>
+"
+echo "force password rules: sudo chage -m <time> <user> | -M <time> <user>
+"
+echo "crontab: sudo crontab -u root -e
+"
+echo "alias: vim ~/.bashrc | source ~/.bashrc"'
