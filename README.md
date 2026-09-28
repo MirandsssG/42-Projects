@@ -32,7 +32,7 @@ This GitHub serves as my **developer portfolio**, documenting my projects and gr
 ### Languages
 
 * C
-* C++ (currently learning)
+* C++
 
 ### Environment
 
