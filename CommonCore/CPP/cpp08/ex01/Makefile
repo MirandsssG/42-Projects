@@ -1,9 +1,9 @@
-NAME = Array
+NAME = Span
 
 CC = c++
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 OBJ_DIR = objects
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
